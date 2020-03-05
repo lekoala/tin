@@ -58,7 +58,7 @@ If you want to get the reason why a number is invalid, you can use
 
 ## Links
 
-[`TIN Algorithms - Public - Functional Specification`](https://ec.europa.eu/taxation_customs/tin/specs/FS-TIN Algorithms-Public.docx)
+[`TIN Algorithms - Public - Functional Specification`](<https://ec.europa.eu/taxation_customs/tin/specs/FS-TIN Algorithms-Public.docx>)
 [`Taxpayer Identification Number`](https://en.wikipedia.org/wiki/Taxpayer_Identification_Number)
 
 ## License
