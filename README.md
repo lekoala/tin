@@ -16,8 +16,6 @@
 [![Dependency Status](https://www.versioneye.com/php/lekoala:tin/badge.svg)](https://www.versioneye.com/php/lekoala:tin)
 [![Reference Status](https://www.versioneye.com/php/lekoala:tin/reference_badge.svg?style=flat)](https://www.versioneye.com/php/lekoala:tin/references)
 
-![codecov.io](https://codecov.io/github/lekoala/tin/branch.svg?branch=master)
-
 A library to validate TIN numbers. This is based on a java library,
 this is why the code does not reflect best practices in php.
 
