@@ -1,5 +1,23 @@
 # Taxpayer Identification Number (TIN) Validator
 
+[![Build Status](https://travis-ci.org/lekoala/tin.svg?branch=master)](https://travis-ci.org/lekoala/tin)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lekoala/tin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lekoala/tin/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/lekoala/tin/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/lekoala/tin/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/lekoala/tin/badges/build.png?b=master)](https://scrutinizer-ci.com/g/lekoala/tin/build-status/master)
+[![codecov.io](https://codecov.io/github/lekoala/tin/coverage.svg?branch=master)](https://codecov.io/github/lekoala/tin?branch=master)
+
+[![Latest Stable Version](https://poser.pugx.org/lekoala/tin/version)](https://packagist.org/packages/lekoala/tin)
+[![Latest Unstable Version](https://poser.pugx.org/lekoala/tin/v/unstable)](//packagist.org/packages/lekoala/tin)
+[![Total Downloads](https://poser.pugx.org/lekoala/tin/downloads)](https://packagist.org/packages/lekoala/tin)
+[![License](https://poser.pugx.org/lekoala/tin/license)](https://packagist.org/packages/lekoala/tin)
+[![Monthly Downloads](https://poser.pugx.org/lekoala/tin/d/monthly)](https://packagist.org/packages/lekoala/tin)
+[![Daily Downloads](https://poser.pugx.org/lekoala/tin/d/daily)](https://packagist.org/packages/lekoala/tin)
+
+[![Dependency Status](https://www.versioneye.com/php/lekoala:tin/badge.svg)](https://www.versioneye.com/php/lekoala:tin)
+[![Reference Status](https://www.versioneye.com/php/lekoala:tin/reference_badge.svg?style=flat)](https://www.versioneye.com/php/lekoala:tin/references)
+
+![codecov.io](https://codecov.io/github/lekoala/tin/branch.svg?branch=master)
+
 A library to validate TIN numbers. This is based on a java library,
 this is why the code does not reflect best practices in php.
 
