@@ -82,7 +82,13 @@ class LUAlgorithm extends TINAlgorithm
         $c11 = StringUtil::digitAt($tin, 10);
         $c12 = StringUtil::digitAt($tin, 11);
         try {
-            $sum = $c2 + $c4 + $c6 + $c8 + $c10 + $c12 + NumberUtil::sumDigit($c1 * 2) + NumberUtil::sumDigit($c3 * 2) + NumberUtil::sumDigit($c5 * 2) + NumberUtil::sumDigit($c7 * 2) + NumberUtil::sumDigit($c9 * 2) + NumberUtil::sumDigit($c11 * 2);
+            $sum = $c2 + $c4 + $c6 + $c8 + $c10 + $c12
+                + NumberUtil::sumDigit($c1 * 2)
+                + NumberUtil::sumDigit($c3 * 2)
+                + NumberUtil::sumDigit($c5 * 2)
+                + NumberUtil::sumDigit($c7 * 2)
+                + NumberUtil::sumDigit($c9 * 2)
+                + NumberUtil::sumDigit($c11 * 2);
             $remainderBy10 = $sum % 10;
             return $remainderBy10 == 0;
         } catch (NegativeNumberException $e) {

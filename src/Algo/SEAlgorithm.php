@@ -37,7 +37,10 @@ class SEAlgorithm extends TINAlgorithm
 
     public function isFollowPatterns(string $tin)
     {
-        return $this->isFollowPatternAndIsValidDate($tin) || $this->isFollowPattern2AndIsValidDate2($tin) || $this->isFollowPattern3AndIsValidDate3($tin) || $this->isFollowPattern4AndIsValidDate4($tin);
+        return $this->isFollowPatternAndIsValidDate($tin)
+            || $this->isFollowPattern2AndIsValidDate2($tin)
+            || $this->isFollowPattern3AndIsValidDate3($tin)
+            || $this->isFollowPattern4AndIsValidDate4($tin);
     }
 
     public function isFollowPatternAndIsValidDate(string $tin)
@@ -62,7 +65,10 @@ class SEAlgorithm extends TINAlgorithm
 
     public function isFollowRules(string $tin)
     {
-        return (intval("10") == strlen($tin) && $this->isFollowSwedenRule1And2($tin)) || (intval("12") == strlen($tin) && $this->isFollowSwedenRule3And4($tin));
+        return (intval("10") == strlen($tin)
+            && $this->isFollowSwedenRule1And2($tin))
+            || (intval("12") == strlen($tin)
+                && $this->isFollowSwedenRule3And4($tin));
     }
 
     public function isFollowLength1And2(string $tin)
@@ -108,7 +114,12 @@ class SEAlgorithm extends TINAlgorithm
         $c9 = StringUtil::digitAt($tin, 8);
         $c10 = StringUtil::digitAt($tin, 9);
         try {
-            $sum = $c2 + $c4 + $c6 + $c8 + NumberUtil::sumDigit($c1 * 2) + NumberUtil::sumDigit($c3 * 2) + NumberUtil::sumDigit($c5 * 2) + NumberUtil::sumDigit($c7 * 2) + NumberUtil::sumDigit($c9 * 2);
+            $sum = $c2 + $c4 + $c6 + $c8
+                + NumberUtil::sumDigit($c1 * 2)
+                + NumberUtil::sumDigit($c3 * 2)
+                + NumberUtil::sumDigit($c5 * 2)
+                + NumberUtil::sumDigit($c7 * 2)
+                + NumberUtil::sumDigit($c9 * 2);
             $check = 10 - NumberUtil::getUnit($sum);
             if ($check != 10) {
                 return $c10 == $check;
@@ -132,7 +143,12 @@ class SEAlgorithm extends TINAlgorithm
         $c11 = StringUtil::digitAt($tin, 10);
         $c12 = StringUtil::digitAt($tin, 11);
         try {
-            $sum = $c4 + $c6 + $c8 + $c10 + NumberUtil::sumDigit($c3 * 2) + NumberUtil::sumDigit($c5 * 2) + NumberUtil::sumDigit($c7 * 2) + NumberUtil::sumDigit($c9 * 2) + NumberUtil::sumDigit($c11 * 2);
+            $sum = $c4 + $c6 + $c8 + $c10
+                + NumberUtil::sumDigit($c3 * 2)
+                + NumberUtil::sumDigit($c5 * 2)
+                + NumberUtil::sumDigit($c7 * 2)
+                + NumberUtil::sumDigit($c9 * 2)
+                + NumberUtil::sumDigit($c11 * 2);
             $check = 10 - NumberUtil::getUnit($sum);
             if ($check != 10) {
                 return $c12 == $check;
