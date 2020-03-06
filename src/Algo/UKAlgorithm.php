@@ -18,7 +18,7 @@ class UKAlgorithm extends TINAlgorithm
     {
         $normalizedTIN = str_replace("/", "", $tin);
         if (strlen($tin) == 8) {
-            $normalizedTIN += " ";
+            $normalizedTIN .= " ";
         }
         if (!$this->isFollowLength1($normalizedTIN) && !$this->isFollowLength2($normalizedTIN)) {
             return StatusCode::INVALID_LENGTH;
