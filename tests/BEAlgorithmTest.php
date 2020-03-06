@@ -14,6 +14,7 @@ class BEAlgorithmTest extends TestCase
     public function testValidNumber()
     {
         $this->assertTrue(TINValid::checkTIN('be', self::VALID_NUMBER));
+        $this->markTestIncomplete('test a valid number that follows BelgiumRule2');
     }
 
     public function testInvalidNumber()
