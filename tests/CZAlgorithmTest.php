@@ -20,9 +20,7 @@ class CZAlgorithmTest extends TestCase
      */
     public function testValid(string $value, $message)
     {
-        $this->assertTrue(
-            TINValid::checkTIN('cz', $value)
-        , $message);
+        $this->assertTrue(TINValid::checkTIN('cz', $value), $message);
     }
 
     /**
