@@ -26,14 +26,14 @@ Supported countries are:
 - Croatia (HR)
 - Cyprus (CY)
 - Czech Republic (CZ) - no check digit
-- Denmark (DK)
+- Denmark (DK) - no check digit (rule exist, but is not valid anymore)
 - Estonia (EE)
 - Finland (FI)
 - France (FR)
-- Germany	23
+- Germany (DE)
 - Greece (GR) - only size
 - Hungary (HU)
-- Ireland	(IE)
+- Ireland (IE)
 - Italy (IT)
 - Latvia (LV) - no check digit
 - Lithuania	(LT)
@@ -48,6 +48,10 @@ Supported countries are:
 - Spain (ES)
 - Sweden (SE)
 - United Kingdom (UK) - only structure
+
+If your country is not there, feel free to open an issue with your country code and
+a link to the specification. Ideally, if you can provide a PR with the algorithm and the
+test that would be even better :-)
 
 ## Installation
 
@@ -75,6 +79,7 @@ If you want to get the reason why a number is invalid, you can use
 ## Links
 
 [`TIN Algorithms - Public - Functional Specification`](<https://ec.europa.eu/taxation_customs/tin/specs/FS-TIN Algorithms-Public.docx>)
+
 [`Taxpayer Identification Number`](https://en.wikipedia.org/wiki/Taxpayer_Identification_Number)
 
 ## License
