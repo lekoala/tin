@@ -25,7 +25,7 @@ Supported countries are:
 - Bulgaria (BG)
 - Croatia (HR)
 - Cyprus (CY)
-- Czech Republic (CZ) - no check digit
+- Czech Republic (CZ) - no check digit (but possible czechphp/national-identification-number-validator)
 - Denmark (DK) - no check digit (rule exist, but is not valid anymore)
 - Estonia (EE)
 - Finland (FI)

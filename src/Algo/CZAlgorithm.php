@@ -7,6 +7,8 @@ use LeKoala\Tin\Util\StringUtil;
 
 /**
  * Czech Republic
+ *
+ * TODO: implement modulus check
  */
 class CZAlgorithm extends TINAlgorithm
 {
@@ -15,11 +17,11 @@ class CZAlgorithm extends TINAlgorithm
 
     public function validate(string $tin)
     {
-        $str = StringUtil::clearString($tin);
-        if (!$this->isFollowLength1($str) && !$this->isFollowLength2($str)) {
+        $normalizedTIN = str_replace("/", "", $tin);
+        if (!$this->isFollowLength1($normalizedTIN) && !$this->isFollowLength2($normalizedTIN)) {
             return StatusCode::INVALID_LENGTH;
         }
-        if (!$this->isValidDate($str)) {
+        if (!$this->isValidDate($normalizedTIN)) {
             return StatusCode::INVALID_PATTERN;
         }
         return StatusCode::VALID;
@@ -43,6 +45,14 @@ class CZAlgorithm extends TINAlgorithm
     {
         $year = intval(StringUtil::substring($tin, 0, 2));
         $month = intval(StringUtil::substring($tin, 2, 4));
+        // female have +50 in their month
+        if ($month > 50) {
+            $month = $month - 50;
+        }
+        // some people have +20 in their month
+        if ($month > 12) {
+            $month = $month - 20;
+        }
         $day = intval(StringUtil::substring($tin, 4, 6));
 
         $y1 = DateUtil::validate(1900 + $year, $month, $day);
