@@ -43,6 +43,16 @@ class DKAlgorithm extends TINAlgorithm
         return $this->isFollowDenmarkRule($tin);
     }
 
+    /**
+     * @link https://cpr.dk/cpr-systemet/personnumre-uden-kontrolciffer-modulus-11-kontrol/
+     *
+     * The CPR office has since 2007 given out social security numbers without the so called modulus 11 control.
+     * The social security numbers without modulus 11 are completely valid
+     * and are given out, as some birth years no longer have the capacity to provide them with modulus 11 control.
+     *
+     * @param string $tin
+     * @return boolean
+     */
     public function isFollowDenmarkRule(string $tin)
     {
         $serialNumber = intval(StringUtil::substring($tin, 6, 10));
