@@ -22,9 +22,9 @@ class DKAlgorithm extends TINAlgorithm
         if (!$this->isFollowPattern($whithoutHyphen) || !$this->isValidDate($whithoutHyphen)) {
             return StatusCode::INVALID_PATTERN;
         }
-        if (!$this->isFollowRules($whithoutHyphen)) {
-            return StatusCode::INVALID_SYNTAX;
-        }
+        // if (!$this->isFollowRules($whithoutHyphen)) {
+        //     return StatusCode::INVALID_SYNTAX;
+        // }
         return StatusCode::VALID;
     }
 
