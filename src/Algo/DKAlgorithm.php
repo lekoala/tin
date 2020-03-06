@@ -22,9 +22,9 @@ class DKAlgorithm extends TINAlgorithm
         if (!$this->isFollowPattern($whithoutHyphen) || !$this->isValidDate($whithoutHyphen)) {
             return StatusCode::INVALID_PATTERN;
         }
-        // if (!$this->isFollowRules($whithoutHyphen)) {
-        //     return StatusCode::INVALID_SYNTAX;
-        // }
+        if (!$this->isFollowRules($whithoutHyphen)) {
+            return StatusCode::INVALID_SYNTAX;
+        }
         return StatusCode::VALID;
     }
 
@@ -50,16 +50,45 @@ class DKAlgorithm extends TINAlgorithm
      * The social security numbers without modulus 11 are completely valid
      * and are given out, as some birth years no longer have the capacity to provide them with modulus 11 control.
      *
+     * We should not check modulus 11 control for the following birthdays:
+     *
+     * 1st of januar 1960
+     * 1st of januar 1964
+     * 1st of januar 1965
+     * 1st of januar 1966
+     * 1st of januar 1969
+     * 1st of januar 1970
+     * 1st of januar 1974
+     * 1st of januar 1980
+     * 1st of januar 1982
+     * 1st of januar 1984
+     * 1st of januar 1985
+     * 1st of januar 1986
+     * 1st of januar 1987
+     * 1st of januar 1988
+     * 1st of januar 1989
+     * 1st of januar 1990
+     * 1st of januar 1991
+     * 1st of januar 1992
+     *
      * @param string $tin
      * @return boolean
      */
     public function isFollowDenmarkRule(string $tin)
     {
         $serialNumber = intval(StringUtil::substring($tin, 6, 10));
+        $dayOfBirth = intval(StringUtil::substring($tin, 0, 2));
+        $monthOfBirth = intval(StringUtil::substring($tin, 2, 4));
         $yearOfBirth = intval(StringUtil::substring($tin, 4, 6));
         if ($yearOfBirth >= 37 && $yearOfBirth <= 57 && $serialNumber >= 5000 && $serialNumber <= 8999) {
             return false;
         }
+
+        $excludedYears = [60, 64, 65, 66, 69, 70, 74, 80, 82, 84, 85, 86, 87, 88, 89, 90, 91, 92];
+        if ($dayOfBirth == 1 && $monthOfBirth == 1 && in_array($yearOfBirth, $excludedYears)) {
+            return true;
+        }
+
         $c1 = StringUtil::digitAt($tin, 0);
         $c2 = StringUtil::digitAt($tin, 1);
         $c3 = StringUtil::digitAt($tin, 2);

@@ -16,7 +16,7 @@
 [![Dependency Status](https://www.versioneye.com/php/lekoala:tin/badge.svg)](https://www.versioneye.com/php/lekoala:tin)
 [![Reference Status](https://www.versioneye.com/php/lekoala:tin/reference_badge.svg?style=flat)](https://www.versioneye.com/php/lekoala:tin/references)
 
-A library to validate TIN numbers. This is based on a java library,
+A library to validate TIN numbers for individuals. This is based on a java library,
 this is why the code does not reflect best practices in php.
 
 Supported countries are:
@@ -26,7 +26,7 @@ Supported countries are:
 - Croatia (HR)
 - Cyprus (CY)
 - Czech Republic (CZ) - no check digit (but possible czechphp/national-identification-number-validator)
-- Denmark (DK) - no check digit (rule exist, but is not valid anymore)
+- Denmark (DK)
 - Estonia (EE)
 - Finland (FI)
 - France (FR)
