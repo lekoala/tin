@@ -6,6 +6,8 @@ use LeKoala\Tin\Util\StringUtil;
 
 /**
  * United Kingdom
+ * 10 numerals = UTR: Unique Taxpayer Reference
+ * 9 chars=  NINO: National Insurance Number
  */
 class UKAlgorithm extends TINAlgorithm
 {

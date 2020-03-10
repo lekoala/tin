@@ -56,10 +56,10 @@ class TINValid
      * @param string $countryCode
      * @return boolean
      */
-    public function isCountrySupported(string $countryCode)
+    public static function isCountrySupported(string $countryCode)
     {
         try {
-            $algo = self::getAlgoForCountry($countryCode);
+            self::getAlgoForCountry($countryCode);
             return true;
         } catch (InvalidCountryException $ex) {
             return false;

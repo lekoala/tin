@@ -10,7 +10,7 @@ class TINValidTest extends TestCase
     public function testSupportedCountries()
     {
         $this->assertTrue(TINValid::isCountrySupported('be'));
-        $this->assertFalse(TINValid::isCountrySupported('cz'));
+        $this->assertFalse(TINValid::isCountrySupported('cn'));
     }
 
     public function testCheckTin()
