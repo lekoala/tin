@@ -5,6 +5,7 @@ namespace LeKoala\Tin;
 use InvalidArgumentException;
 use LeKoala\Tin\Algo\TINAlgorithmInterface;
 use LeKoala\Tin\Exception\TINValidationException;
+use LeKoala\Tin\Exception\InvalidCountryException;
 
 /**
  * The main class to validate TIN numbers
@@ -50,6 +51,22 @@ class TINValid
     }
 
     /**
+     * Check if country is supported
+     *
+     * @param string $countryCode
+     * @return boolean
+     */
+    public function isCountrySupported(string $countryCode)
+    {
+        try {
+            $algo = self::getAlgoForCountry($countryCode);
+            return true;
+        } catch (InvalidCountryException $ex) {
+            return false;
+        }
+    }
+
+    /**
      * @param integer $statusCode
      * @return string
      */
@@ -84,7 +101,7 @@ class TINValid
         }
         $class = "LeKoala\\Tin\\Algo\\" . strtoupper($countryCode) . "Algorithm";
         if (!class_exists($class)) {
-            throw new InvalidArgumentException("Algorithm '$class' was not found.");
+            throw new InvalidCountryException("Algorithm '$class' was not found.");
         }
         return new $class;
     }

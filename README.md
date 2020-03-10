@@ -65,16 +65,20 @@ $ composer require lekoala/tin
 
 To simply check the validity of a number
 
-    TINValid::checkTIN($countryCode, $number)
+    $result = TINValid::checkTIN($countryCode, $number);
 
 If you want to get the reason why a number is invalid, you can use
 
     try {
-        TINValid::validateTIN($countryCode, $number)
+        TINValid::validateTIN($countryCode, $number);
     }
     catch(TINValidationException $e) {
         
     }
+
+If you want to see if a country is supported or not, you can simply use
+
+    $result = TINValid::isCountrySupported('be');
 
 ## Links
 
