@@ -82,12 +82,13 @@ class BEAlgorithm extends TINAlgorithm
     public function isFollowBelgiumRule1(string $tin)
     {
         $divisionRemainderBy97 = intval(StringUtil::substring($tin, 0, 9)) % 97;
+
         return 97 - $divisionRemainderBy97 == intval(StringUtil::substring($tin, 9, 11));
     }
 
     public function isFollowBelgiumRule2(string $tin)
     {
-        $divisionRemainderBy97 = floatval(2 + StringUtil::substring($tin, 0, 9)) % 97;
+        $divisionRemainderBy97 = floatval('2' . StringUtil::substring($tin, 0, 9)) % 97;
         return 97 - $divisionRemainderBy97 == intval(StringUtil::substring($tin, 9, 11));
     }
 

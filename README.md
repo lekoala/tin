@@ -16,6 +16,8 @@
 [![Dependency Status](https://www.versioneye.com/php/lekoala:tin/badge.svg)](https://www.versioneye.com/php/lekoala:tin)
 [![Reference Status](https://www.versioneye.com/php/lekoala:tin/reference_badge.svg?style=flat)](https://www.versioneye.com/php/lekoala:tin/references)
 
+You may want to use https://github.com/loophp/tin instead.
+
 A library to validate TIN numbers for individuals. This is based on a java library,
 this is why the code does not reflect best practices in php.
 
